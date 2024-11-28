@@ -1,72 +1,27 @@
-# Angular-Library-Grid
-Activity 32: Angular Library Grid
+# AngularLibraryGrid
 
-Create the Book Model
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.1.
 
-Book model that includes the necessary fields for each book, including the rating.
+## Development server
 
-export interface Book {
-    id: number;
-    title: string;
-    author: string;
-    genre: string;
-    year: number;
-    coverImage: string;
-  }
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-  Book Component
+## Code scaffolding
 
-BookComponent to display the list of books, handle adding new books, and manage the removal of books.
-This component also contains logic for displaying the rating in star format.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-import { Component, OnInit } from '@angular/core';
-import { Book } from '../../book.model';
-import { BookService } from '../../services/book.service';
+## Build
 
-@Component({
-  selector: 'app-book',
-  templateUrl: './book.component.html',
-  styleUrl: './book.component.css'
-})
-export class BookComponent implements OnInit{
-  books: Book[] = [];
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-  constructor(private bookService: BookService) {}
+## Running unit tests
 
-  ngOnInit(): void {
-    this.books = this.bookService.getBooks();
-  }
-}
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Book Service
+## Running end-to-end tests
 
-a service to handle adding and removing books. This service can maintain a simple array of books.
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-import { Injectable } from '@angular/core';
-import { Book } from '../book.model';
+## Further help
 
-@Injectable({
-  providedIn: 'root'
-})
-export class BookService {
-
-  private books: Book[] = [
-    { id: 1, title: 'SOLO LEVELING', author: 'H-GOON', genre: 'ACTION, FANTASY', year: 2023, coverImage: 'assets/img/SOLO.jpg' },
-    { id: 2, title: 'ONE PIECE', author: 'EIICHIRO ODA', genre: 'ACTION, FANTASY', year: 1997, coverImage: 'assets/img/ONE.jpeg' },
-    { id: 3, title: 'ONE PUNCH MAN', author: 'YUSUKE MURATA', genre: 'ACTION, FANTASY', year: 2009, coverImage: 'assets/img/OP.jpeg' },
-    { id: 4, title: 'HUNTER X HUNTER', author: 'YOSHIHIRO TOGASHI', genre: 'ACTION, FANTASY', year: 1998, coverImage: 'assets/img/hunter.jpg' },
-    { id: 5, title: 'SLAM DUNK', author: 'TAKEHIKO INOUE', genre: 'SPORTS, COMEDY AND DRAMA', year: 1990, coverImage: 'assets/img/SD.JPEG' }
-  ];
-
-  getBooks(): Book[] {
-
- 
-    return this.books;
-  }
-}
-
- OUTPUT:
-
-  ![image](https://github.com/user-attachments/assets/d95f0d2d-5618-44c4-9eb3-fbd0c0ee8da1)
-
-
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

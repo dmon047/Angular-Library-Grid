@@ -1,0 +1,12 @@
+<div class="library">
+  <h1 class="library__title">BEST SELLING MANGA & MANHUA </h1>
+  <div class="library__grid">
+    <div *ngFor="let book of books" class="library__item">
+      <img [src]="book.coverImage" alt="{{ book.title }}" class="library__image" />
+      <h3 class="library__book-title">{{ book.title }}</h3>
+      <p class="library__book-author">{{ book.author }}</p>
+      <p class="library__book-genre">{{ book.genre }}</p>
+      <p class="library__book-year">{{ book.year }}</p>
+    </div>
+  </div>
+</div>
